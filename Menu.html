@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Navigator Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/5431/5431045.png"
+    />
+  </head>
+  <style>
+    *{
+      
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      
+    }
+    .body{
+      background-color :#f2f2f2;;
+    }
+    .slide{
+      height: 100%;
+      width: 180px;
+      position: absolute;
+      background:linear-gradient( to bottom,
+       #f0f8ff,
+        #b2ffff,
+        #7fffd4,
+        #0fffff,
+        #007fff,
+        #0000cd
+      );
+      background-size: 200%;
+      animation: anime 2s linear infinite;
+      transition: 0.5s ease;
+      transform: translateX(-180px);
+    }
+     @keyframes anime {
+      to {
+        background-position: 200%;
+      }
+    }
+    h1{
+      background: linear-gradient(
+        to right,
+        #9400d3,
+        #ff00ff,
+        #8f00ff,
+        #df00ff,
+        #fe4eda,
+        #ff6fff)
+        ;
+        background-size: 200%;
+        background-clip: text;
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       animation: anime 2.5s linear infinite;
+       font-weight: 800;
+       text-align: right;
+       padding: 10px 0;
+       padding-right: 20px;
+       pointer-events: none;
+      }
+
+    @keyframes anime {
+      to {
+        background-position: 200%;
+      }
+    }
+    ul li{
+      list-style: none;
+        }
+     ul li a{
+      font-family: sans-serif;
+          font-size: 18px;
+          color: black;
+          font-weight: 400;
+          padding: 5px 0;
+          display: block;
+          text-transform: capitalize;
+          text-decoration: none;
+          transition: .2s ease-out;
+        }
+        ul li:hover a{
+          color: snow;
+          background: linear-gradient(
+        to right,
+        #ff00ff,
+        #8f00ff,
+        #df00ff,
+        #fe4eda,
+        #ff6fff);
+        background-size: 200%;
+    }
+        
+       ul li a i{
+          margin-left: 30px;
+          padding-right: 35px;
+          text-align: center;
+          
+         }
+         input{
+          
+          display: none;
+          visibility: hidden;
+         }
+         .toggle{
+          position: absolute;
+          height:25px;
+          width: 25px;
+          top: 17px;
+          left: 27px;
+          z-index: 1;
+          cursor: pointer;
+          background-color: snow;
+          box-shadow: 0 0 3.5px;
+         }
+         .toggle .common{
+          position: absolute;
+          height: 2px;
+          width: 15px;
+          background-color: #9400d3;
+          border-radius: 40px;
+          transition: .3s ease;
+         }
+         .toggle .top_line{
+          top:30%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+         }
+          .toggle .middle_line{
+          top:50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+         }
+          .toggle .bottom_line{
+          top:70%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+         }
+         input:checked ~ .toggle .top_line{
+          left: 2px;
+          top: 12px;
+          width: 21px;
+          transform: rotate(45deg);
+         }
+         input:checked ~ .toggle .bottom_line{
+          left: 2px;
+          top: 12px;
+          width: 21px;
+          transform: rotate(-45deg);
+         }
+          input:checked ~ .toggle .middle_line{
+         opacity: 0;
+          transform: translatex(20px);
+         }
+         input:checked ~ .slide{
+          transform: translateX(0);
+          box-shadow: 0 0 7px;
+         }
+  </style>
+  <body>
+    <label>
+      <input type="checkbox">
+      <div class="toggle">
+        <span class="top_line common"></span>
+        <span class="middle_line common"></span>
+        <span class="bottom_line common"></span>
+      </div>
+        <div class="slide">
+            <h1>MENU</h1>
+            <ul>
+                <li><a href="https://www.youtube.com/" target="_blank"><i class="fas fa-tv"></i>Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="#"><i class="fas fa-gripfire"></i>Trending</a></li>
+                <li><a href="#"><i class="fas fa-comment"></i>Message</a></li>
+                <li><a href="#"><i class="fas fa-heart"></i>Saved</a></li>
+                <li><a href="#"><i class="fas fa-cogs"></i>Setting</a></li>
+                </a></li>
+            </ul>
+        </div>
+    </label>
+  </body>
+</html>
